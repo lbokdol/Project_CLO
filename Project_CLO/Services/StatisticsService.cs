@@ -1,12 +1,12 @@
 ﻿using System.Collections.Concurrent;
-using Microsoft.AspNetCore.Mvc.Controllers;
+
 using Project_CLO.Common;
 
 namespace Project_CLO.Services
 {
     public class StatisticsService
     {
-        private ConcurrentDictionary<string, APIInformation> _apiCount = new ConcurrentDictionary<string, APIInformation>();
+        private readonly ConcurrentDictionary<string, APIInformation> _apiCount = new ConcurrentDictionary<string, APIInformation>();
         private readonly EndpointDataSource _endpointDataSource;
 
         public StatisticsService(EndpointDataSource endpointDataSource) 

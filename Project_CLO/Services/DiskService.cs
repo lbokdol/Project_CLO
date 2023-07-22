@@ -103,7 +103,7 @@ namespace Project_CLO.Services
                             var childDirectoryStructure = new ContentsStructure
                             {
                                 Name = childDirectoryInfo.Name,
-                                Path = childDirectoryInfo.FullName,
+                                Path = childDirectoryInfo.FullName.Replace(rootDirectoryInfo.FullName, ""),
                                 Children = new List<ContentsStructure>(),
                                 Type = ContentType.Folder,
                             };
@@ -117,7 +117,7 @@ namespace Project_CLO.Services
                         var childDirectoryStructure = new ContentsStructure
                         {
                             Name = fileInfo.Name,
-                            Path = fileInfo.FullName,
+                            Path = fileInfo.FullName.Replace(rootDirectoryInfo.FullName, ""),
                             Type = ContentType.File,
                         };
 
